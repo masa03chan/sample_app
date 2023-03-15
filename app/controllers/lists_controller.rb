@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def index
-    @list =List.all
+    @lists =List.all
   end
 
   def show
@@ -26,9 +26,13 @@ class ListsController < ApplicationController
     list.update(list_params)
     redirect_to list_path(list.id)
   end
+  
+  def destroy
+    list =List.
+  end
 
   private
   def list_params
-    params.require(:list).permit(:title,:body)
+    params.require(:list).permit(:title,:body,:image)
   end
 end
